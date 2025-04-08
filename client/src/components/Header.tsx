@@ -10,8 +10,11 @@ const Header = () => {
 
   const navItems = [
     { label: "Collection", path: "/collections" },
+    { label: "Store", path: "/store" },
+    { label: "Fabrics", path: "/fabrics" },
     { label: "Bespoke", path: "/bespoke" },
     { label: "Customize", path: "/customize" },
+    { label: "Pricing", path: "/pricing" },
     { label: "Appointments", path: "/appointments" },
   ];
 

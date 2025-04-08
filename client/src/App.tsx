@@ -10,6 +10,9 @@ import Bespoke from "./pages/bespoke";
 import Customize from "./pages/customize";
 import Appointments from "./pages/appointments";
 import Profile from "./pages/profile";
+import StorePage from "./pages/store";
+import FabricsPage from "./pages/fabrics";
+import PricingPage from "./pages/pricing";
 import NotFound from "@/pages/not-found";
 
 function Router() {
@@ -21,6 +24,9 @@ function Router() {
       <Route path="/customize" component={Customize} />
       <Route path="/appointments" component={Appointments} />
       <Route path="/profile" component={Profile} />
+      <Route path="/store" component={StorePage} />
+      <Route path="/fabrics" component={FabricsPage} />
+      <Route path="/pricing" component={PricingPage} />
       <Route component={NotFound} />
     </Switch>
   );
