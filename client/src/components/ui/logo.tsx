@@ -1,4 +1,5 @@
 import React from "react";
+import logoSvg from "../../assets/logo.svg";
 
 interface LogoProps {
   variant?: "full" | "icon";
@@ -16,7 +17,9 @@ const Logo: React.FC<LogoProps> = ({
   return (
     <div className={`${className}`}>
       {variant === "full" ? (
-        <h1 className={`${textColor} font-cormorant font-medium text-2xl md:text-3xl`}>THE EMPEROR</h1>
+        <div className="flex items-center">
+          <img src={logoSvg} alt="The Emperor" className="h-12 md:h-14" />
+        </div>
       ) : (
         <div className={`${textColor} font-cormorant font-medium text-xl`}>E</div>
       )}

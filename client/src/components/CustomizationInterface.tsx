@@ -21,9 +21,11 @@ const CustomizationInterface: React.FC = () => {
   
   // Style options state
   const [styleOptions, setStyleOptions] = useState<StyleOption[]>([
-    { type: "Lapel Style", options: ["Peak Lapel", "Notch Lapel", "Shawl Collar"], selected: "Peak Lapel" },
+    { type: "Lapel Style", options: ["Peak Lapel", "Notch Lapel", "Ottoman Shawl Collar"], selected: "Peak Lapel" },
     { type: "Vents", options: ["Center Vent", "Side Vents", "No Vents"], selected: "Side Vents" },
-    { type: "Button Configuration", options: ["Two Button", "Three Button", "Double-Breasted"], selected: "Two Button" }
+    { type: "Button Configuration", options: ["Two Button", "Three Button", "Ottoman Double-Breasted"], selected: "Two Button" },
+    { type: "Lining", options: ["Silk", "Ottoman Geometric Motif", "Signature Pattern"], selected: "Ottoman Geometric Motif" },
+    { type: "Cuffs", options: ["Standard", "Kissing Buttons", "Gold Buttons"], selected: "Gold Buttons" }
   ]);
   
   // Fetch fabrics from API
@@ -31,36 +33,46 @@ const CustomizationInterface: React.FC = () => {
     queryKey: ['/api/fabrics'],
   });
   
-  // Default fabrics for development
+  // Default fabrics for development - Air of Heritage Collection
   const defaultFabrics: Fabric[] = [
     {
       id: 1,
-      name: "Navy Wool",
-      type: "Wool",
-      color: "Navy",
+      name: "Ivory Cotton-Linen",
+      type: "Cotton-Linen",
+      color: "Ivory White",
       pattern: "Solid",
-      price: 18000,
-      image: "https://images.unsplash.com/photo-1581513243061-c455bfb589be?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80",
+      price: 22000,
+      image: "https://images.unsplash.com/photo-1586161713016-d5d3fc8325e1?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80",
       available: true
     },
     {
       id: 2,
-      name: "Charcoal Twill",
+      name: "Midnight Merino",
       type: "Wool",
-      color: "Charcoal",
+      color: "Midnight Navy",
       pattern: "Twill",
-      price: 16000,
+      price: 18000,
       image: "https://images.unsplash.com/photo-1598099947351-3f13bf0b8056?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80",
       available: true
     },
     {
       id: 3,
-      name: "Brown Herringbone",
-      type: "Wool",
-      color: "Brown",
-      pattern: "Herringbone",
-      price: 19000,
+      name: "Amber Silk Jacquard",
+      type: "Silk",
+      color: "Amber Gold",
+      pattern: "Jacquard",
+      price: 24000,
       image: "https://images.unsplash.com/photo-1528458909336-e7a0adfed0a5?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80",
+      available: true
+    },
+    {
+      id: 4,
+      name: "Sandstone Bamboo",
+      type: "Bamboo-Linen",
+      color: "Sandstone Beige",
+      pattern: "Stretch",
+      price: 19000,
+      image: "https://images.unsplash.com/photo-1589561454226-796a8aa89b05?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80",
       available: true
     }
   ];
@@ -140,11 +152,17 @@ const CustomizationInterface: React.FC = () => {
                       onClick={() => setSelectedFabric(fabric)}
                     >
                       <div className={`h-20 rounded overflow-hidden border-2 ${selectedFabric?.id === fabric.id ? 'border-[#D4AF37]' : 'border-transparent hover:border-[#D4AF37]'}`}>
-                        <img 
-                          src={fabric.image}
-                          alt={fabric.name} 
-                          className="w-full h-full object-cover"
-                        />
+                        {fabric.image ? (
+                          <img 
+                            src={fabric.image}
+                            alt={fabric.name} 
+                            className="w-full h-full object-cover"
+                          />
+                        ) : (
+                          <div className="w-full h-full flex items-center justify-center bg-[#0A1F44]/20">
+                            <span className="text-[#F8F5E6]/70 text-xs">No image</span>
+                          </div>
+                        )}
                       </div>
                       <p className="text-white text-xs mt-1 text-center">{fabric.name}</p>
                     </div>

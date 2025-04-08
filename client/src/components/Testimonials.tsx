@@ -15,7 +15,7 @@ const Testimonials: React.FC = () => {
       id: 1,
       name: "Rahul Mehta",
       location: "Mumbai, India",
-      testimonial: "The Emperor's attention to detail is unmatched. My wedding sherwani was beyond what I could have envisioned, with personal touches that made it truly one-of-a-kind.",
+      testimonial: "The Emperor's Ottoman-inspired details elevated my wedding sherwani to an heirloom piece. Each stitch tells a story of heritage and craftsmanship rarely found in today's world.",
       image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80",
       featured: true
     },
@@ -23,7 +23,7 @@ const Testimonials: React.FC = () => {
       id: 2,
       name: "James Richardson",
       location: "London, UK",
-      testimonial: "From the initial consultation to the final fitting, The Emperor experience is exceptional. Their expert tailors guided me toward suit details I would never have considered, resulting in a garment that feels uniquely mine.",
+      testimonial: "True luxury begins where mass production ends. My bespoke journey with The Emperor was a collaborative experience that expressed my individuality with unparalleled fit and finish. A garment that feels uniquely mine.",
       image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80",
       featured: true
     },
@@ -31,7 +31,7 @@ const Testimonials: React.FC = () => {
       id: 3,
       name: "David Chen",
       location: "Singapore",
-      testimonial: "When you wear a suit from The Emperor, you immediately understand the difference. The fabric, the construction, the way it moves with you—it's an investment in how you present yourself to the world.",
+      testimonial: "When you wear a garment from The Emperor, you understand the difference immediately. Their Air of Heritage collection perfectly balances lightness with tradition—it's an investment in how gracefully you move through the world.",
       image: "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80",
       featured: true
     }
@@ -76,11 +76,17 @@ const Testimonials: React.FC = () => {
                 </p>
                 <div className="flex items-center">
                   <div className="w-12 h-12 rounded-full overflow-hidden">
-                    <img 
-                      src={testimonial.image}
-                      alt={testimonial.name} 
-                      className="w-full h-full object-cover"
-                    />
+                    {testimonial.image ? (
+                      <img 
+                        src={testimonial.image}
+                        alt={testimonial.name} 
+                        className="w-full h-full object-cover"
+                      />
+                    ) : (
+                      <div className="w-full h-full flex items-center justify-center bg-[#0A1F44]/20">
+                        <span className="text-[#F8F5E6]/70 text-xs">{testimonial.name.charAt(0)}</span>
+                      </div>
+                    )}
                   </div>
                   <div className="ml-4">
                     <h5 className="font-playfair text-[#0A1F44]">{testimonial.name}</h5>

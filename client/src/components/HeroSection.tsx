@@ -19,12 +19,13 @@ const HeroSection: React.FC = () => {
       <div className="relative h-full flex items-center">
         <div className="container mx-auto px-6 md:px-10 lg:px-16">
           <div className="max-w-2xl">
+            <div className="text-[#D4AF37] uppercase tracking-wider mb-2 fade-in">SS25 Collection</div>
             <h2 className="text-white font-playfair text-4xl md:text-5xl lg:text-6xl leading-tight mb-4 fade-in">
-              Crafting Perfection, <br/>
-              <span className="italic">Tailored to You</span>
+              Air of Heritage <br/>
+              <span className="italic">Ottoman Legacy</span>
             </h2>
             <p className="text-[#F8F5E6] opacity-90 text-lg md:text-xl mb-8 font-light max-w-lg slide-up" style={{animationDelay: '0.3s'}}>
-              Discover the art of bespoke tailoring where every stitch tells a story of tradition, precision, and uncompromising quality.
+              A celebration of lightness, grace, and regal silhouettes. Experience our Ottoman-inspired tailoring where every stitch embodies tradition and uncompromising quality.
             </p>
             <div className="slide-up" style={{animationDelay: '0.6s'}}>
               <Link href="/bespoke">

@@ -79,7 +79,7 @@ const AppointmentBooking: React.FC = () => {
         <div className="max-w-3xl mx-auto text-center mb-12">
           <h3 className="text-[#D4AF37] font-playfair text-3xl md:text-4xl mb-4">Begin Your Bespoke Journey</h3>
           <p className="text-white text-lg">
-            Schedule a consultation with our master tailors to discuss your vision and explore the possibilities.
+            Schedule a consultation with our master tailors to experience the Ottoman-inspired elegance of "Air of Heritage" - where tradition meets modern nobility.
           </p>
         </div>
         
